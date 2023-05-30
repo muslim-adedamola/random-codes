@@ -1,3 +1,10 @@
+""" 
+I extracted this python script from the https://github.com/ultralytics/ultralytics/blob/main/ultralytics/datasets/Objects365.yaml page. 
+However, I re-wrote the directory aspect of the code to eliminate yaml, and directory issues. 
+I made this extraction so I could download the object365 dataset to any local machine 
+I want without running the yolov8 train script for object365. """
+
+
 #run pip install ultralytics to the local machine before running
 from tqdm import tqdm
 
