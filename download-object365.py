@@ -1,3 +1,4 @@
+#run pip install ultralytics to the local machine before running
 from tqdm import tqdm
 
 from ultralytics.yolo.utils.checks import check_requirements
