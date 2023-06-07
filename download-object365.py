@@ -29,10 +29,10 @@ for p in 'images', 'labels':
         os.path.join(dir, p)
 
     for q in 'train', 'val':
-        if not os.path.exists(dir + '/' + q):
+        if os.path.exists('images'):
             os.mkdir(dir + '/' + q)
-        else:
-            os.path.join(dir, q)
+        if os.path.exists('labels'):
+            os.mkdir(dir + '/' + q)
         
   # Train, Val Splits
 for split, patches in [('train', 50 + 1), ('val', 43 + 1)]:
