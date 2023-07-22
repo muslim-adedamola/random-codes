@@ -1,3 +1,4 @@
+#transform any image into fisheye
 import os
 from PIL import Image
 import math
@@ -92,7 +93,3 @@ pool.join()
 end = time.time()
 timer = (end - start) / 60
 print(timer)
-
-
-#fffff
-###
