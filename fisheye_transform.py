@@ -1,4 +1,4 @@
-#transform any image into fisheye
+#transform any image into fisheye using multiprocessing
 import os
 from PIL import Image
 import math
