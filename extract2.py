@@ -1,3 +1,4 @@
+#extract the classes into a text file of each patch of the downloaded Obj365 dataset
 import json
 import os
 import time
