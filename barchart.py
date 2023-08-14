@@ -1,3 +1,4 @@
+#create a bar chart of the distribution of classes in each download patches of Obj365 dataset
 import matplotlib.pyplot as plt
 from collections import Counter
 
