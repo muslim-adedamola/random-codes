@@ -1,0 +1,1986 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="gv_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.271781448538423 0.311366676835679 0.51920250829937"
+        rpy="0 0 0" />
+      <mass
+        value="1.0550351123056" />
+      <inertia
+        ixx="0.00721878315040008"
+        ixy="0.0136727434114561"
+        ixz="-0.00219296186882238"
+        iyy="0.034998491807679"
+        iyz="0.00081769696845734"
+        izz="0.0391762272468654" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hub_left_link">
+    <inertial>
+      <origin
+        xyz="2.22166507413135E-10 7.90462695299254E-11 -0.0346622357840345"
+        rpy="0 0 0" />
+      <mass
+        value="0.0539143627225942" />
+      <inertia
+        ixx="4.70872510863882E-05"
+        ixy="1.82501540144399E-16"
+        ixz="7.94874295253551E-14"
+        iyy="4.70872510859565E-05"
+        iyz="2.22860841871906E-14"
+        izz="4.56133110403578E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/hub_left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/hub_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_hub_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.065383 -0.66104 0.40576"
+      rpy="1.6782 -0.76831 3.0315" />
+    <parent
+      link="base_link" />
+    <child
+      link="hub_left_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="5" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell1_hll">
+    <inertial>
+      <origin
+        xyz="1.2052382747374E-07 0.0331203922119506 -3.27436950220417E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234231887892" />
+      <inertia
+        ixx="1.06861053395901E-05"
+        ixy="-4.21609569976203E-11"
+        ixz="3.66582977934304E-11"
+        iyy="1.31389668164235E-06"
+        iyz="1.01229053287007E-10"
+        izz="1.02189333910477E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell1_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell1_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell1_joint"
+    type="fixed">
+    <origin
+      xyz="0.031 0 -0.037628"
+      rpy="-3.1416 0 1.5708" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell1_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston1_hll">
+    <inertial>
+      <origin
+        xyz="3.67030961179182E-10 0.0793091524224626 1.59554225387382E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952970769862" />
+      <inertia
+        ixx="0.000181994985139685"
+        ixy="2.46863391078151E-13"
+        ixz="1.53466357519886E-12"
+        iyy="0.000111235506763657"
+        iyz="-9.26316291602553E-13"
+        izz="0.000163343871331746" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston1_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston1_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell1_hll_piston1_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 0 -3.1416" />
+    <parent
+      link="shell1_hll" />
+    <child
+      link="piston1_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell2_hll">
+    <inertial>
+      <origin
+        xyz="9.5740256000898E-08 0.0331204121904742 -1.19662711295376E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234224176211" />
+      <inertia
+        ixx="1.06861191415101E-05"
+        ixy="-3.15019628039446E-11"
+        ixz="3.76512975787627E-11"
+        iyy="1.31390128475147E-06"
+        iyz="3.65605849587871E-11"
+        izz="1.02189433551252E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell2_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell2_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell2_joint"
+    type="fixed">
+    <origin
+      xyz="0.0219203102167832 -0.0219203102167829 -0.0376279706487175"
+      rpy="-3.14159265358979 0 0.785398163397454" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell2_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston2_hll">
+    <inertial>
+      <origin
+        xyz="-2.64589539167304E-09 0.0793092568648901 -3.45580841720761E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986940332128284" />
+      <inertia
+        ixx="0.000181992737338026"
+        ixy="-4.4029298919141E-12"
+        ixz="1.36467392435071E-10"
+        iyy="0.000111233041439339"
+        iyz="-1.22680370551832E-11"
+        izz="0.00016334320442448" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston2_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston2_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell2_hll_piston2_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="shell2_hll" />
+    <child
+      link="piston2_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell3_hll">
+    <inertial>
+      <origin
+        xyz="-3.32943204117697E-08 0.0331203987845674 1.34069741308807E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229351661" />
+      <inertia
+        ixx="1.06861127855101E-05"
+        ixy="1.23308009877555E-11"
+        ixz="3.76635638953351E-11"
+        iyy="1.31390112655542E-06"
+        iyz="-4.16663298790202E-11"
+        izz="1.02189366647237E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell3_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell3_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell3_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.031 -0.0376279706487174"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell3_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston3_hll">
+    <inertial>
+      <origin
+        xyz="-1.07094166867938E-10 0.0793091525149642 -1.26445542925069E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952966628926" />
+      <inertia
+        ixx="0.000181994984357298"
+        ixy="-4.78112044975804E-14"
+        ixz="1.60651396106595E-12"
+        iyy="0.000111235505997083"
+        iyz="4.71513869386715E-13"
+        izz="0.000163343871034541" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston3_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston3_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell3_hll_piston3_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="shell3_hll" />
+    <child
+      link="piston3_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell4_hll">
+    <inertial>
+      <origin
+        xyz="-1.12259082876709E-07 0.033120399692564 3.27106605246819E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229001228" />
+      <inertia
+        ixx="1.06861089703004E-05"
+        ixy="3.96683521142137E-11"
+        ixz="3.66517655507271E-11"
+        iyy="1.31389668721287E-06"
+        iyz="-1.01343802028057E-10"
+        izz="1.02189369097098E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell4_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell4_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell4_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0219203102167828 -0.0219203102167831 -0.0376279706487173"
+      rpy="-3.14159265358979 0 -0.785398163397445" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell4_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston4_hll">
+    <inertial>
+      <origin
+        xyz="3.07682314348856E-09 0.0793092507935079 -6.98132684995301E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.098694056752488" />
+      <inertia
+        ixx="0.000181992785701979"
+        ixy="4.47069853641382E-12"
+        ixz="1.33164788464673E-10"
+        iyy="0.000111233080724909"
+        iyz="-2.52260582299428E-11"
+        izz="0.000163343229858185" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston4_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston4_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell4_hll_piston4_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell4_hll" />
+    <child
+      link="piston4_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell5_hll">
+    <inertial>
+      <origin
+        xyz="-1.65586753808622E-07 0.0331203922119509 2.95856978915765E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234231887896" />
+      <inertia
+        ixx="1.06861058346202E-05"
+        ixy="5.55502386012971E-11"
+        ixz="3.68305158639042E-11"
+        iyy="1.31389765881031E-06"
+        iyz="-9.08672995423603E-11"
+        izz="1.0218933873186E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell5_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell5_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell5_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0309999999999999 0 -0.0376279706487174"
+      rpy="-3.14159265358979 0 -1.5707963267949" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell5_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston5_hll">
+    <inertial>
+      <origin
+        xyz="4.31760238672751E-10 0.0793091538171407 -8.12070299893719E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952782966968" />
+      <inertia
+        ixx="0.000181994952608856"
+        ixy="3.60663559134662E-13"
+        ixz="5.08612543671211E-12"
+        iyy="0.000111235468800553"
+        iyz="1.0078266287177E-12"
+        izz="0.000163343865640596" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston5_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston5_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell5_hll_piston5_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 0 -3.1416" />
+    <parent
+      link="shell5_hll" />
+    <child
+      link="piston5_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell6_hll">
+    <inertial>
+      <origin
+        xyz="-3.39724263165309E-08 0.033120412190475 1.62958926019918E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234224176216" />
+      <inertia
+        ixx="1.06861188338171E-05"
+        ixy="1.30018410879627E-11"
+        ixz="3.75441565867759E-11"
+        iyy="1.3139006773779E-06"
+        iyz="-5.08349707867984E-11"
+        izz="1.02189430554453E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell6_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell6_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell6_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0219203102167829 0.0219203102167829 -0.0376279706487173"
+      rpy="3.14159265358979 0 -2.35619449019234" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell6_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston6_hll">
+    <inertial>
+      <origin
+        xyz="2.59781107736501E-09 0.0793092568648917 -3.37608485612151E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986940332128295" />
+      <inertia
+        ixx="0.000181992737343438"
+        ixy="4.02439228280763E-12"
+        ixz="1.36124847307778E-10"
+        iyy="0.000111233041446187"
+        iyz="-1.22538185795008E-11"
+        izz="0.000163343204425916" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston6_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston6_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell6_hll_piston6_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell6_hll" />
+    <child
+      link="piston6_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell7_hll">
+    <inertial>
+      <origin
+        xyz="7.60344906480803E-08 0.0331203987845677 -1.04115390642257E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229351665" />
+      <inertia
+        ixx="1.06861129649341E-05"
+        ixy="-2.50634834737798E-11"
+        ixz="3.77260028919314E-11"
+        iyy="1.31390148073058E-06"
+        iyz="3.18223982611468E-11"
+        izz="1.02189368394751E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell7_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell7_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell7_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.031 -0.0376279706487175"
+      rpy="3.14159265358979 0 -3.14159265358978" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell7_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston7_hll">
+    <inertial>
+      <origin
+        xyz="-1.24330712392151E-10 0.0793091525180544 -9.08550568112787E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.098695296668089" />
+      <inertia
+        ixx="0.000181994984278123"
+        ixy="-4.70917542998195E-14"
+        ixz="1.61631350715537E-12"
+        iyy="0.000111235505921729"
+        iyz="-9.17224797294404E-14"
+        izz="0.000163343871040404" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston7_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston7_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell7_hll_piston7_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.1416 0 -3.1416" />
+    <parent
+      link="shell7_hll" />
+    <child
+      link="piston7_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell8_hll">
+    <inertial>
+      <origin
+        xyz="1.69579656192353E-07 0.0331203996925994 -2.86933663273814E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229001215" />
+      <inertia
+        ixx="1.06861095906524E-05"
+        ixy="-5.67508922248605E-11"
+        ixz="3.68676602014967E-11"
+        iyy="1.31389791171033E-06"
+        iyz="8.81388330708382E-11"
+        izz="1.02189375138892E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell8_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell8_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_left_shell8_joint"
+    type="fixed">
+    <origin
+      xyz="0.0219203102167828 0.0219203102167831 -0.0376279706487177"
+      rpy="3.14159265358979 0 2.35619449019236" />
+    <parent
+      link="hub_left_link" />
+    <child
+      link="shell8_hll" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston8_hll">
+    <inertial>
+      <origin
+        xyz="-3.1799E-09 0.079309 -7.0781E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.098694" />
+      <inertia
+        ixx="0.00018199"
+        ixy="-5.2802E-12"
+        ixz="1.3404E-10"
+        iyy="0.00011123"
+        iyz="-2.5241E-11"
+        izz="0.00016334" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston8_hll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston8_hll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell8_hll_piston8_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="shell8_hll" />
+    <child
+      link="piston8_hll" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="hub_right_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/hub_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/hub_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_hub_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.079026 -0.27543 0.37594"
+      rpy="-1.4604 0.79655 -3.0978" />
+    <parent
+      link="base_link" />
+    <child
+      link="hub_right_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="5" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell1_hrl">
+    <inertial>
+      <origin
+        xyz="1.20523827196184E-07 0.0331203922119508 -3.27436950442461E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234231887895" />
+      <inertia
+        ixx="1.06861053395903E-05"
+        ixy="-4.2160956941651E-11"
+        ixz="3.66582977910481E-11"
+        iyy="1.31389668164239E-06"
+        iyz="1.01229053349013E-10"
+        izz="1.02189333910479E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell1_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell1_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell1_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.031 0.037628"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell1_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston1_hrl">
+    <inertial>
+      <origin
+        xyz="7.06065761413299E-11 0.0793091531151748 3.604983034311E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952896760212" />
+      <inertia
+        ixx="0.0001819949719159"
+        ixy="-4.76962823336677E-13"
+        ixz="3.11605231304666E-12"
+        iyy="0.00011123549149206"
+        iyz="2.77303741831624E-12"
+        izz="0.000163343869371547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston1_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston1_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell1_hrl_piston1_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell1_hrl" />
+    <child
+      link="piston1_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell2_hrl">
+    <inertial>
+      <origin
+        xyz="9.57402560564091E-08 0.0331204121904742 -1.19662711128843E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234224176212" />
+      <inertia
+        ixx="1.06861191415102E-05"
+        ixy="-3.15019628137047E-11"
+        ixz="3.7651297575904E-11"
+        iyy="1.31390128475147E-06"
+        iyz="3.65605849299185E-11"
+        izz="1.02189433551252E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell2_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell2_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell2_joint"
+    type="fixed">
+    <origin
+      xyz="0.0219203102167865 -0.0219203102167792 0.0376279706487173"
+      rpy="0 0 -2.35619449019232" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell2_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston2_hrl">
+    <inertial>
+      <origin
+        xyz="2.64589833376405E-09 0.0793092568648918 3.45580991600869E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986940332128294" />
+      <inertia
+        ixx="0.00018199273733612"
+        ixy="4.40293014811509E-12"
+        ixz="1.36467392468953E-10"
+        iyy="0.000111233041437437"
+        iyz="1.22680367798975E-11"
+        izz="0.000163343204424478" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston2_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston2_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell2_hrl_piston2_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell2_hrl" />
+    <child
+      link="piston2_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell3_hrl">
+    <inertial>
+      <origin
+        xyz="-3.32943204950364E-08 0.0331203987845677 1.34069741419829E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229351666" />
+      <inertia
+        ixx="1.06861127855103E-05"
+        ixy="1.23308009926748E-11"
+        ixz="3.76635638921588E-11"
+        iyy="1.31390112655546E-06"
+        iyz="-4.1666329889168E-11"
+        izz="1.0218936664724E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell3_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell3_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell3_joint"
+    type="fixed">
+    <origin
+      xyz="0.031 0 0.037628"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell3_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston3_hrl">
+    <inertial>
+      <origin
+        xyz="7.84749765170289E-11 0.0793091525068844 2.0167201242316E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952992565764" />
+      <inertia
+        ixx="0.000181994989020346"
+        ixy="6.47192027786625E-14"
+        ixz="1.48504184362635E-12"
+        iyy="0.000111235511488209"
+        iyz="-2.71515503011288E-13"
+        izz="0.000163343872175352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston3_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston3_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell3_hrl_piston3_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell3_hrl" />
+    <child
+      link="piston3_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell4_hrl">
+    <inertial>
+      <origin
+        xyz="-1.12259082862831E-07 0.033120399692564 3.27106605413352E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229001227" />
+      <inertia
+        ixx="1.06861089703003E-05"
+        ixy="3.96683521162841E-11"
+        ixz="3.66517655541946E-11"
+        iyy="1.31389668721286E-06"
+        iyz="-1.01343802058352E-10"
+        izz="1.02189369097098E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell4_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell4_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell4_joint"
+    type="fixed">
+    <origin
+      xyz="0.02192 0.02192 0.037628"
+      rpy="0 0 -0.7854" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell4_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston4_hrl">
+    <inertial>
+      <origin
+        xyz="3.07682290756617E-09 0.0793092507935075 -6.98132618381919E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986940567524878" />
+      <inertia
+        ixx="0.000181992785701977"
+        ixy="4.47069853561973E-12"
+        ixz="1.33164788450697E-10"
+        iyy="0.000111233080724908"
+        iyz="-2.52260588542061E-11"
+        izz="0.000163343229858182" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston4_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston4_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell4_hrl_piston4_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell4_hrl" />
+    <child
+      link="piston4_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell5_hrl">
+    <inertial>
+      <origin
+        xyz="-1.65586754030667E-07 0.0331203922119508 2.95856979082298E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234231887895" />
+      <inertia
+        ixx="1.06861058346202E-05"
+        ixy="5.55502386355775E-11"
+        ixz="3.68305158581073E-11"
+        iyy="1.31389765881029E-06"
+        iyz="-9.08672996162507E-11"
+        izz="1.02189338731859E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell5_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell5_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell5_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.0310000000000036 0.0376279706487174"
+      rpy="0 0 0" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell5_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston5_hrl">
+    <inertial>
+      <origin
+        xyz="4.10919631654849E-11 0.0793091531214837 4.96686625162113E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952882761678" />
+      <inertia
+        ixx="0.000181994970412333"
+        ixy="-4.96125725364351E-13"
+        ixz="3.14080523775592E-12"
+        iyy="0.000111235489528893"
+        iyz="1.06653569609011E-12"
+        izz="0.00016334386878415" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston5_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston5_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell5_hrl_piston5_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell5_hrl" />
+    <child
+      link="piston5_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell6_hrl">
+    <inertial>
+      <origin
+        xyz="-3.39724263165309E-08 0.0331204121904739 1.62958925742362E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.012823422417621" />
+      <inertia
+        ixx="1.06861188338167E-05"
+        ixy="1.30018410435663E-11"
+        ixz="3.75441565859818E-11"
+        iyy="1.31390067737788E-06"
+        iyz="-5.0834970772786E-11"
+        izz="1.02189430554449E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell6_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell6_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell6_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0219203102167804 0.0219203102167862 0.0376279706487173"
+      rpy="0 0 0.785398163397463" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell6_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston6_hrl">
+    <inertial>
+      <origin
+        xyz="-2.59781335332221E-09 0.0793092568648895 3.37608391243194E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986940332128294" />
+      <inertia
+        ixx="0.00018199273734534"
+        ixy="-4.02439223611494E-12"
+        ixz="1.36124846932543E-10"
+        iyy="0.000111233041448092"
+        iyz="1.22538179128859E-11"
+        izz="0.000163343204425913" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston6_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston6_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell6_hrl_piston6_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.1416 0 -3.1416" />
+    <parent
+      link="shell6_hrl" />
+    <child
+      link="piston6_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell7_hrl">
+    <inertial>
+      <origin
+        xyz="7.60344906758359E-08 0.0331203987845675 -1.04115390864301E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229351663" />
+      <inertia
+        ixx="1.06861129649341E-05"
+        ixy="-2.50634834856683E-11"
+        ixz="3.77260028998723E-11"
+        iyy="1.31390148073058E-06"
+        iyz="3.1822398331702E-11"
+        izz="1.02189368394751E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell7_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell7_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell7_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0309999999999973 0 0.0376279706487174"
+      rpy="0 0 1.57079632679491" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell7_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston7_hrl">
+    <inertial>
+      <origin
+        xyz="1.24327159678472E-10 0.079309152518061 9.08550457090485E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986952966680878" />
+      <inertia
+        ixx="0.000181994984277273"
+        ixy="4.70912689499407E-14"
+        ixz="1.61631436689381E-12"
+        iyy="0.00011123550592089"
+        iyz="9.17228670352556E-14"
+        izz="0.00016334387104039" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston7_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston7_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell7_hrl_piston7_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell7_hrl" />
+    <child
+      link="piston7_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="shell8_hrl">
+    <inertial>
+      <origin
+        xyz="1.6957965615072E-07 0.0331203996925989 -2.86933663440347E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0128234229001211" />
+      <inertia
+        ixx="1.06861095906522E-05"
+        ixy="-5.67508922202072E-11"
+        ixz="3.6867660206473E-11"
+        iyy="1.31389791171031E-06"
+        iyz="8.81388331317782E-11"
+        izz="1.02189375138889E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell8_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/shell8_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hub_right_shell8_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0219203102167798 -0.02192031021678 0.0376279706487174"
+      rpy="0 0 2.35619449019236" />
+    <parent
+      link="hub_right_link" />
+    <child
+      link="shell8_hrl" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="piston8_hrl">
+    <inertial>
+      <origin
+        xyz="3.17994451604076E-09 0.0793092507935199 7.07811964595351E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0986940567524871" />
+      <inertia
+        ixx="0.000181992785682925"
+        ixy="5.28015935314445E-12"
+        ixz="1.34035266014629E-10"
+        iyy="0.000111233080702119"
+        iyz="2.52409950494921E-11"
+        izz="0.000163343229854443" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston8_hrl.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gv_robot_description/meshes/piston8_hrl.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shell8_hrl_piston8_joint"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shell8_hrl" />
+    <child
+      link="piston8_hrl" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.125"
+      effort="5"
+      velocity="2" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>
